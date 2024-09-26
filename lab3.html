@@ -3,9 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TheFacebook</title>
+    <link rel="stylesheet" href="lab3styles.css">
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   
+}
+
+.link td {
+    border: 1px solid gray;  
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    height: 100vh;
+}
+
+
+header {
+    background-color: #3b5998;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 25px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 10px;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 15px;
+    font-size: 15px;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.mok th{
+    background-color: #3b5998;
+    color: white;
+    padding: 5px;
+    text-align: left;
+}
+
+table.mok {
+    margin-top: 15px;
+    padding: 0;
+    border-spacing: 0;
+    border: 1px solid #3b5998;
+}
+
+.mok2 th{
+    background-color: #3b5998;
+    font-weight: bolder;
+    color: whitesmoke;
+    padding: 5px;
+    text-align: left;
+}
+
+.mok2{
+    margin-top: 15px;
+    padding: 0;
+    border-spacing: 0;
+    border: 1px solid #3b5998;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+}
+
+#profile {
+    margin: 20px auto;
+    width: 90%;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    height: 100vh;
+}
+
+#left-sidebar {
+    background-color: #dfe3ee;
+    padding: 15px;
+    width: 250px;
+    margin-right: 20px;
+}
+
+#left-sidebar ul {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+#left-sidebar ul li {
+    margin-bottom: 10px;
+}
+
+
+#main-profile {
+    background-color: white;
+    padding: 15px;
+    flex: 1;
+}
+
+#picture img {
+    width: 120px;
+    height: 150px;
+    border-radius: 5px;
+    list-style-type: none;
+}
+
+#picture a {
+    text-align: center;
+    margin-top: 10px;
+    color: #3b5998;
+    text-decoration: none;
+
+}
+
+#top-section {
+    display: flex;
+    list-style-type: none;
+}
+
+#profile-info {
+    margin-left: 20px;
+}
+
+#info table {
+    width: 100%;
+}
+
+#info th {
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+}
+
+#info td {
+    padding: 5px 0;
+}
+
+footer {
+    background-color: #3b5998;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+    </style>
 </head>
 <body>
-    
+    <header>
+        <h1>[thefacebook]</h1>
+        <nav>
+            <ul>
+                <li>home</li>
+                <li>search</li>
+                <li>global</li>
+                <li>social net</li>
+                <li>invite</li>
+                <li>faq</li>
+                <li>logout</li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="profile" class="flex-row">
+        <section id="left-sidebar" class="flex-column">
+            <label for="search">Quick search</label>
+            <input type="text" id="search">
+            <button>Go</button>
+
+            <ul>
+                <li>My Profile</li>
+                <li>My Groups</li>
+                <li>My Friends</li>
+                <li>My Messages</li>
+                <li>My Away Messages</li>
+                <li>My Mobile Info</li>
+                <li>My Account </li>
+                <li>My Privacy</li>
+            </ul>
+        </section>
+
+        <section id="main-profile" class="flex-column">
+            <section id="top-section" class="flex-row">
+                <section id="picture" class="flex-column">
+                    <h2>Б. Бат-Эрдэнэ's Probile</h2>
+                    <img src="mok.jpg" alt="myProfile">
+                    <a href="#">Edit</a>
+                    <table class="link">
+                        <tr><td><a href="https://www.facebook.com/b.baterdene.988?mibextid=LQQJ4d">Visualize my friends</a></td></tr>
+                        <tr><td><a href="https://www.facebook.com/b.baterdene.988?mibextid=LQQJ4d">Edit my profile</a></td></tr>
+                        <tr><td><a href="https://www.facebook.com/b.baterdene.988?mibextid=LQQJ4d">My account preferences</a></td></tr>
+                        <tr><td><a href="https://www.facebook.com/b.baterdene.988?mibextid=LQQJ4d">My privacy preferences</a></td></tr>
+                    </table>
+
+                    <table class="mok">
+                        <tr><th>Connection</th></tr>
+                        <tr><td>This is you</td></tr>
+                    </table>
+
+                    <table class="mok">
+                        <tr><th>Access</th></tr>
+                        <tr><td>Бат-Эрдэнэ is currently logged in from Ulaanbaatar</td></tr>
+                    </table>
+
+                    <table class="mok">
+                        <tr><th>Other Schools</th></tr>
+                        <tr><td>Бат-Эрдэнэ is currently logged in from Ulaanbaatar</td></tr>
+                    </table>
+                </section>
+                <section id="profile-info" class="flex-column">
+                    <section id="info">
+                        <table class="mok2">
+                            <tr><th>Information</th></tr>
+                            <tr><td> <b>Account Info: </b></td></tr>
+                            <tr><td>Name: Б. Бат-Эрдэнэ</td></tr>
+                            <tr><td>Member Since: February 10, 2018</td></tr>
+                            <tr><td>Last Update: September 24, 2024</td></tr>
+                            <tr><td><a href="#">Edit</a></td></tr>
+
+                            <tr><td> <b>Basic Info: </b></td></tr>
+                            <tr><td>Email: berdenex@gmail.com</td></tr>
+                            <tr><td>Status: </td></tr>
+                            <tr><td>School: National University of Mongolia</td></tr>
+                            <tr><td>Year: 2021</td></tr>
+                            <tr><td>Concentration: </td></tr>
+                            <tr><td>Phone: 99559810</td></tr>
+                            <tr><td><a href="#">Edit</a></td></tr>
+
+                            <tr><td> <b>Extended Info: </b></td></tr>
+                            <tr><td>Screenname: Б. Бат-Эрдэнэ</td></tr>
+                            <tr><td>Looking for: Bat-Erdene</td></tr>
+                            <tr><td>Interested in: Gangsta service</td></tr>
+                            <tr><td>Relationship Status: In Relationship</td></tr>
+                            <tr><td><a href="#">Edit</a></td></tr>
+                        </table>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+    <footer>
+        <p>&copy; 2004 thefacebook</p>
+    </footer>
 </body>
 </html>
