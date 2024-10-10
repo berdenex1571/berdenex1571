@@ -4,13 +4,7 @@
     box-sizing: border-box;
     font-family: Lato, sans-serif;
 }
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-}
+
 body{
     background-color: white;
     padding: 0px;
@@ -179,7 +173,6 @@ body{
 .Welcome .reference{
     font-size: 10px;
     text-align: center;
-    display: block;
     margin: 5px auto;
     color: white;
 }
@@ -258,7 +251,6 @@ footer {
 
     .main-content, .sidebar {
         padding: 20px;
-        
     }
 
 }
