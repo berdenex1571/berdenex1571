@@ -195,16 +195,18 @@ ul li strong {
 .cv-section:hover h2 {
     color: var(--primary-color);
 }
-
-.skills li:hover {
+.skills li strong:hover {
     color: var(--primary-color);
 }
-
 .contact ul li:hover i {
     color: var(--secondary-color);
 }
-
-
-
-
-
+.languages li strong:hover {
+    color: var(--primary-color);
+}
+.education li:hover {
+    color: var(--primary-color);
+}
+.awards li:hover {
+    color: var(--primary-color);
+}
