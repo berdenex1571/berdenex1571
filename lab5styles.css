@@ -225,6 +225,10 @@ footer {
     .content {
         flex-direction: column;
     }
+    .if frame {
+        width: 100% 
+        height 100%
+    }
 
     .main-content, .sidebar {
         padding: 10px;
