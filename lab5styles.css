@@ -253,6 +253,10 @@ footer {
         flex-direction: column;
     }
 
+    .if frame {
+        width: 25px
+    }
+
     .main-content, .sidebar {
         padding: 15px;
         width: 100%;
@@ -275,6 +279,10 @@ footer {
 
     .content{
         flex-direction: row;
+    }
+
+    .if frame {
+        width: 30px
     }
 
     .main-content, .sidebar {
