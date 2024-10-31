@@ -51,7 +51,7 @@
   
   .hero-content {
     background: rgba(0, 0, 0, 0.6);
-    padding: 32px;
+    padding: 48px;
     border-radius: 5px;
   }
   
@@ -80,18 +80,15 @@
   }
   
   .movie-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
     gap: 16px;
     padding: 32px;
-    max-width: 1200px;
-    margin: 0 auto;
   }
   
   .movie-card {
-    flex: 1 1 calc(33.333% - 16px);
     background-color: #333;
-    padding: 32px;
+    padding: 6px;
     border-radius: 5px;
     text-align: center;
     font-size: 16px;
@@ -103,4 +100,5 @@
   .movie-card:hover {
     transform: scale(1.05);
   }
+  
   
