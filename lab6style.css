@@ -1,104 +1,57 @@
-* {
+*{
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-  }
-  
-  body {
-    background-color: #141414;
-    color: #fff;
-  }
-  
-  header {
-    background-color: #000;
-    padding: 16px 0;
-  }
-  
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-  
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #E50914;
-  }
-  
-  nav a {
-    color: #fff;
-    margin-left: 16px;
-    text-decoration: none;
-    font-size: 16px;
-  }
-  
-  nav a:hover {
-    color: #E50914;
-  }
-  
-  .hero {
-    display: flex;
-    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.flex{
+display: flex;
+}
+.row-center {
     justify-content: center;
-    height: 540px;
-    text-align: center;
-  }
-  
-  .hero-content {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 48px;
-    border-radius: 5px;
-  }
-  
-  .hero h1 {
-    font-size: 40px;
-    margin-bottom: 16px;
-  }
-  
-  .hero p {
-    font-size: 16px;
-    margin-bottom: 32px;
-  }
-  
-  .hero button {
-    background-color: #E50914;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.between{
+    justify-content: space-between;
+}
+h1{
+    color: white;
+}
+.white-button {
+    background-color: white;
+    width: 250px;
+    padding: 12px;
     border: none;
-    padding: 12px 24px;
-    color: #fff;
-    font-size: 16px;
+    border-radius: 4px;
     cursor: pointer;
-    border-radius: 3px;
-  }
-  
-  .hero button:hover {
-    background-color: #ff0a16;
-  }
-  
-  .movie-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 16px;
-    padding: 32px;
-  }
-  
-  .movie-card {
-    background-color: #333;
-    padding: 6px;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 16px;
-    color: #fff;
+}
+.col
+{
+    flex-direction: column;
+}
+.blue-button {
+    background-color: #3e6ae1;
+    width: 250px;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    transition: transform 0.3s ease;
-  }
-  
-  .movie-card:hover {
-    transform: scale(1.05);
-  }
-  
-  
+}
+.end{
+    display: flex;
+    justify-content: center;
+    height: 96%;
+    align-items: end;
+}
+.black-button {
+    background-color: #3e3e3e;
+    width: 250px;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
