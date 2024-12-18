@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catch Time</title>
+  </head>
+  <body>
+    <div id="result"></div>
+
+    <script>
+      function howMuchTime(distance) {
+        // Speeds in meters per second
+        let wolfSpeed = (25 * 1000) / 3600; // 25 km/h to m/s
+        let rabbitSpeed = (18 * 1000) / 3600; // 18 km/h to m/s
+        
+        // Relative speed difference between wolf and rabbit
+        let metrPerSecond = wolfSpeed - rabbitSpeed;
+        
+        // Time for wolf to catch rabbit
+        let catchTime = Math.round(distance / metrPerSecond);
+        
+        // Display result in the browser
+        document.getElementById('result').innerHTML =
+          "It will take the wolf " + catchTime + " seconds to catch the rabbit over a distance of " + distance + " meters.";
+      }
+
+      // Prompt user for distance
+      var distance = window.prompt("Enter the distance between the wolf and the rabbit (in meters):");
+      if (distance) {
+        howMuchTime(Number(distance));
+      } else {
+        document.getElementById('result').innerHTML = "Please enter a valid distance!";
+      }
+    </script>
+  </body>
+</html>

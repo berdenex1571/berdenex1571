@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digit Sum Palindrome</title>
+  </head>
+  <body>
+    <div id="result"></div>
+
+    <script>
+      function isDigitSumPalindrom(number) {
+        let digitSum = 0;
+
+        // Calculate sum of digits
+        while (number > 0) {
+          let lastDigit = number % 10;
+          number = Math.floor(number / 10);
+          digitSum = digitSum + lastDigit;
+        }
+
+        let saveDigitSum = digitSum;
+        let checkNumber = 0;
+
+        // Check if the digit sum is a palindrome
+        console.log("Sum of digits: " + digitSum);
+        while (digitSum > 0) {
+          let lastDigit = digitSum % 10;
+          digitSum = Math.floor(digitSum / 10);
+          checkNumber = checkNumber * 10 + lastDigit;
+        }
+
+        // Display result in the browser
+        if (checkNumber == saveDigitSum) {
+          document.getElementById('result').innerHTML = "Yes, the digit sum is a palindrome!";
+        } else {
+          document.getElementById('result').innerHTML = "No, the digit sum is not a palindrome.";
+        }
+      }
+
+      // Prompt user for a number
+      var number = window.prompt("Enter a number to check if the sum of its digits is a palindrome:");
+      if (number) {
+        isDigitSumPalindrom(Number(number));
+      } else {
+        document.getElementById('result').innerHTML = "Please enter a valid number!";
+      }
+    </script>
+  </body>
+</html>

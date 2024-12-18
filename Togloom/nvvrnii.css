@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    background: url(../hangman.jpg);
+    background-size: cover;
+}
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.start-button{
+    margin-top: 30px;
+}
+.start-button a {
+    display: inline-block;
+    background-color: rgb(235, 160, 61);
+    color: #ffffff;
+    padding: 15px 15px;
+    margin-top: 550px;
+    font-size: 2rem;
+    text-decoration: none;
+    border-radius: 15px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+.start-button a:hover {
+    background-color: rgb(255, 157, 36);
+    transform: scale(1.2); 
+}

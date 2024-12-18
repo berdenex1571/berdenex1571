@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find Home</title>
+  </head>
+  <body>
+    <div id="result"></div> 
+
+    <script>
+      function findHome(doorNumber) {
+        let ortsniiAiluud = 36;
+        let orts = Math.floor((doorNumber - 1) / ortsniiAiluud) + 1;
+        let positionInHouse = (doorNumber - 1) % ortsniiAiluud;
+        let dawhar = Math.floor(positionInHouse / 4) + 1;
+        let haalga = (positionInHouse % 4) + 1;
+        
+        // Display result in the browser
+        document.getElementById('result').innerHTML =
+          "Door Number " + doorNumber + " is in the " + orts + "rd block, " +
+          dawhar + "th door area, door number " + haalga + " in the house.";
+      }
+
+      // Prompt for door number
+      var doorNumber = window.prompt("Enter the door number (e.g., 16):");
+      if (doorNumber) {
+        findHome(Number(doorNumber));
+      } else {
+        document.getElementById('result').innerHTML = "Please enter a valid door number!";
+      }
+    </script>
+  </body>
+</html>

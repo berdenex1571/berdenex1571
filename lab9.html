@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var x;
+        var x = window.prompt("too oruul");
+        var y = parseInt (x);
+        var s = 0;
+        function niilberOloh (too){ 
+            var niilber  = 0; 
+            var temp = too;
+            while(temp > 0){
+                 niilber = niilber + temp %10; 
+                 var a = Math.floor(temp/10);
+                 temp = a; 
+            }
+            return niilber;
+        }
+        s = niilberOloh(y);
+        
+    </script>
+</body>
+</html>
