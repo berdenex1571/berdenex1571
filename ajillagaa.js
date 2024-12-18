@@ -4,14 +4,18 @@ const hangmanImage = document.querySelector(".hangman-box img");
 const keyboardDiv = document.querySelector(".keyboard");
 const gameModal = document.querySelector(".game-modal");
 const playAgainBtn = gameModal.querySelector("button");
-const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]; // Numbers to add to the keyboard
+const timerText = document.querySelector(".timer-text b"); // Add timer display in your HTML
+const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const cyrillicLetters = [
-    "А", "Б", "В", "Г", "Д", "Е", "Ё", "Ж", "З", "И", "Й", "К", "Л", "М", 
-    "Н", "О", "Ө", "Ү", "П", "Р", "С", "Т", "У", "Ф", "Х", "Ц", "Ч", "Ш", "Щ", "Ъ", 
+    "А", "Б", "В", "Г", "Д", "Е", "Ё", "Ж", "З", "И", "Й", "К", "Л", "М",
+    "Н", "О", "Ө", "Ү", "П", "Р", "С", "Т", "У", "Ф", "Х", "Ц", "Ч", "Ш", "Щ", "Ъ",
     "Ы", "Ь", "Э", "Ю", "Я"
 ];
 
-// Add numbers to the keyboard
+let currentWord, correctLetters, wrongGuessCount, timer;
+const maxGuesses = 5;
+const countdownTime = 30; // Time in seconds
+
 numbers.forEach((number) => {
     const button = document.createElement("button");
     button.innerText = number;
@@ -19,18 +23,12 @@ numbers.forEach((number) => {
     button.addEventListener("click", (e) => initGame(e.target, number));
 });
 
-
-// Add Cyrillic letters to the keyboard
 cyrillicLetters.forEach((letter) => {
     const button = document.createElement("button");
     button.innerText = letter;
     keyboardDiv.appendChild(button);
     button.addEventListener("click", (e) => initGame(e.target, letter));
 });
-
-
-let currentWord, correctLetters, wrongGuessCount;
-const maxGuesses = 5;
 
 const getRandomWord = () => {
     const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)];
@@ -40,6 +38,7 @@ const getRandomWord = () => {
 }
 
 const gameOver = (isVictory) => {
+    clearInterval(timer); // Stop the countdown
     const modalText = isVictory ? `Та зөв хариулсан:` : 'Зөв хариу:';
     gameModal.querySelector("img").src = `${isVictory ? 'you win' : 'image'}.png`;
     gameModal.querySelector("h4").innerText = isVictory ? 'Баяр хүргэе!' : 'Та ялагдлаа!';
@@ -48,9 +47,9 @@ const gameOver = (isVictory) => {
 }
 
 const initGame = (button, clickedLetter) => {
-    if(currentWord.includes(clickedLetter)) {
+    if (currentWord.includes(clickedLetter)) {
         [...currentWord].forEach((letter, index) => {
-            if(letter === clickedLetter) {
+            if (letter === clickedLetter) {
                 correctLetters.push(letter);
                 wordDisplay.querySelectorAll("li")[index].innerText = letter;
                 wordDisplay.querySelectorAll("li")[index].classList.add("guessed");
@@ -63,8 +62,8 @@ const initGame = (button, clickedLetter) => {
     button.disabled = true;
     guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
 
-    if(wrongGuessCount === maxGuesses) return gameOver(false);
-    if(correctLetters.length === currentWord.length) return gameOver(true);
+    if (wrongGuessCount === maxGuesses) return gameOver(false);
+    if (correctLetters.length === currentWord.length) return gameOver(true);
 }
 
 const resetGame = () => {
@@ -75,6 +74,22 @@ const resetGame = () => {
     wordDisplay.innerHTML = currentWord.split("").map(() => `<li class="letter"></li>`).join("");
     keyboardDiv.querySelectorAll("button").forEach(btn => btn.disabled = false);
     gameModal.classList.remove("show");
+    startCountdown(); // Start the timer
+}
+
+const startCountdown = () => {
+    let timeLeft = countdownTime;
+    timerText.innerText = timeLeft;
+
+    clearInterval(timer); // Clear any existing timer
+    timer = setInterval(() => {
+        timeLeft--;
+        timerText.innerText = timeLeft;
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            gameOver(false); // Game over if time runs out
+        }
+    }, 1000);
 }
 
 getRandomWord();
