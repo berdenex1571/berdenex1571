@@ -14,7 +14,7 @@ const cyrillicLetters = [
 
 let currentWord, correctLetters, wrongGuessCount, timer;
 const maxGuesses = 5;
-const countdownTime = 10; // Time in seconds
+const countdownTime = 15; // Time in seconds
 
 numbers.forEach((number) => {
     const button = document.createElement("button");
