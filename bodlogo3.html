@@ -15,7 +15,7 @@
         let positionInHouse = (doorNumber - 1) % ortsniiAiluud;
         let dawhar = Math.floor(positionInHouse / 4) + 1;
         let haalga = (positionInHouse % 4) + 1;
-        
+
         // Display result in the browser
         document.getElementById('result').innerHTML =
           "Door Number " + doorNumber + " is in the " + orts + "rd block, " +
@@ -23,7 +23,7 @@
       }
 
       // Prompt for door number
-      var doorNumber = window.prompt("Enter the door number (e.g., 16):");
+      var doorNumber = window.prompt("Хаалганы тоотыг оруул (e.g., 16):");
       if (doorNumber) {
         findHome(Number(doorNumber));
       } else {
