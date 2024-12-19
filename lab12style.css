@@ -1,0 +1,108 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #a7a7a7;
+  color: #fff;
+  padding: 4px;
+}
+
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+header nav ul li {
+  margin: 0 1rem;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header .search-bar input {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Main Content */
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.featured {
+  display: flex;
+  background: #f4f4f4;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.featured h2 {
+  margin: 0;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.categories article {
+  background: #eaeaea;
+  padding: 1rem;
+  flex: 1;
+}
+
+/* Sidebar */
+aside {
+  background: #f9f9f9;
+  padding: 1rem;
+}
+
+aside h3 {
+  margin: 0 0 1rem;
+}
+
+aside ul {
+  list-style: none;
+  padding: 0;
+}
+
+aside ul li {
+  margin-bottom: 0.5rem;
+}
+
+aside ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 4px 0;
+}
