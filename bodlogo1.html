@@ -14,20 +14,20 @@
 
         // Calculate sum of digits
         while (number > 0) {
-          let lastDigit = number % 10;
+          let lastDigit = number % 10; //8979 
           number = Math.floor(number / 10);
-          digitSum = digitSum + lastDigit;
+          digitSum = digitSum + lastDigit; //33
         }
 
-        let saveDigitSum = digitSum;
+        let saveDigitSum = digitSum; //33
         let checkNumber = 0;
 
         // Check if the digit sum is a palindrome
-        console.log("Sum of digits: " + digitSum);
+        console.log("Sum of digits: " + digitSum); //33
         while (digitSum > 0) {
-          let lastDigit = digitSum % 10;
-          digitSum = Math.floor(digitSum / 10);
-          checkNumber = checkNumber * 10 + lastDigit;
+          let lastDigit = digitSum % 10;   //3
+          digitSum = Math.floor(digitSum / 10); //3
+          checkNumber = checkNumber * 10 + lastDigit; //33
         }
 
         // Display result in the browser

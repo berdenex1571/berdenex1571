@@ -1,0 +1,10 @@
+<books>
+    <book>
+        <title>Learning HTML</title>
+        <author>John Doe</author>
+    </book>
+    <book>
+        <title>Mastering XML</title>
+        <author>Jane Smith</author>
+    </book>
+</books>
