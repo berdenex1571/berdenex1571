@@ -77,33 +77,33 @@ footer {
 
 .news-item {
   display: flex;
-  flex-direction: column; /* Better readability for small widths */
-  background: #f4f4f4; /* Slightly lighter background for improved contrast */
+  flex-direction: column;
+  background: #f4f4f4;
   padding: 1.2rem;
   margin: 1.5rem 0;
-  max-width: 100%; /* Make it responsive */
+  max-width: 100%;
   gap: 1rem;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .news-item:hover {
-  background-color: #a1a1a1; /* Softer hover background */
-  transform: translateY(-4px); /* Slight lift for hover effect */
+  background-color: #a1a1a1; 
+  transform: translateY(-4px); 
 }
 
 .news-item a {
   text-decoration: none;
-  color: #555; /* Slightly darker for better readability */
+  color: #555;
   font-size: 18px;
-  line-height: 1.5; /* Improved readability */
-  font-weight: 500; /* Adds weight to links for visual clarity */
-  transition: color 0.2s ease; /* Smooth hover transition */
+  line-height: 1.5; 
+  font-weight: 500;
+  transition: color 0.2s ease; 
 }
 
 .news-item a:hover {
-  text-decoration: underline; /* Adds a visual cue on hover */
-  color: #222; /* Darker hover color for emphasis */
+  text-decoration: underline;
+  color: #222; 
 }
