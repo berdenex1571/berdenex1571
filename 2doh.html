@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .news-details {
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .news-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background-color: aqua;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .news-date {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .news-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="newsDetails" class="news-details" aria-busy="true">
+        <div class="news-title" id="newsTitle">Loading...</div>
+        <div class="news-date" id="newsDate"></div>
+        <div class="news-content" id="newsContent"></div>
+    </div>
+
+    <script>
+        async function loadNewsDetails() {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get("id");
+
+            if (!id) {
+                document.getElementById("newsDetails").textContent = "Invalid or missing news ID.";
+                return;
+            }
+
+            try {
+                const response = await fetch("ikon.xml");
+                if (!response.ok) {
+                    throw new Error("Failed to fetch news data.");
+                }
+
+                const xmlText = await response.text();
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xmlText, "application/xml");
+                const items = xmlDoc.getElementsByTagName("item");
+
+                let found = false;
+
+                for (const item of items) {
+                    const title = item.getElementsByTagName("title")[0]?.textContent || "No title available.";
+                    const pubDate = item.getElementsByTagName("pubDate")[0]?.textContent || "No date available.";
+                    const content = item.getElementsByTagName("description")[0]?.textContent || "No content available.";
+
+                    const itemId = new Date(pubDate).getTime();
+
+                    if (String(itemId) === id) {
+                        document.getElementById("newsTitle").textContent = title;
+                        document.getElementById("newsDate").textContent = pubDate;
+                        document.getElementById("newsContent").innerHTML = content;
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (!found) {
+                    document.getElementById("newsDetails").textContent = "News item not found.";
+                }
+            } catch (error) {
+                document.getElementById("newsDetails").textContent = "Unable to load news details.";
+                console.error(error);
+            } finally {
+                document.getElementById("newsDetails").setAttribute("aria-busy", "false");
+            }
+        }
+
+        loadNewsDetails();
+    </script>
+</body>
+</html>

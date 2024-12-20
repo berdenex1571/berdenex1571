@@ -43,38 +43,6 @@ header .search-bar input {
   border-radius: 5px;
 }
 
-/* Main Content */
-main {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-}
-
-.featured {
-  display: flex;
-  background: #f4f4f4;
-  padding: 1rem;
-  margin-bottom: 1rem;
-}
-
-.featured h2 {
-  margin: 0;
-}
-
-.categories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1rem;
-  cursor: pointer;
-}
-
-.categories article {
-  background: #eaeaea;
-  padding: 1rem;
-  flex: 1;
-}
-
 /* Sidebar */
 aside {
   background: #f9f9f9;
@@ -105,4 +73,37 @@ footer {
   color: #fff;
   text-align: center;
   padding: 4px 0;
+}
+
+.news-item {
+  display: flex;
+  flex-direction: column; /* Better readability for small widths */
+  background: #f4f4f4; /* Slightly lighter background for improved contrast */
+  padding: 1.2rem;
+  margin: 1.5rem 0;
+  max-width: 100%; /* Make it responsive */
+  gap: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+.news-item:hover {
+  background-color: #a1a1a1; /* Softer hover background */
+  transform: translateY(-4px); /* Slight lift for hover effect */
+}
+
+.news-item a {
+  text-decoration: none;
+  color: #555; /* Slightly darker for better readability */
+  font-size: 18px;
+  line-height: 1.5; /* Improved readability */
+  font-weight: 500; /* Adds weight to links for visual clarity */
+  transition: color 0.2s ease; /* Smooth hover transition */
+}
+
+.news-item a:hover {
+  text-decoration: underline; /* Adds a visual cue on hover */
+  color: #222; /* Darker hover color for emphasis */
 }
